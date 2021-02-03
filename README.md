@@ -55,3 +55,32 @@
 
 자가 균형 이진 탐색 트리는 삽입, 삭제 시 자동으로 높이를 작게 유지하는 노드 기반 이진 탐색 트리이다.
  - AVL트리, 레드-블랙 트리 등
+ 
+# 트리 순회(Tree Traversals)
+## 전위, 중위, 후위 순회 재귀 코드
+N: 현재 L: 왼쪽 R: 오른쪽
+```Python
+#전위 순회 #NLR
+def preorder(node):
+    if not node:
+        return
+    print(node.val)
+    preorder(node.left)
+    preorder(node.right)
+
+# 중위 순회 #LNR
+def inorder(node):
+    if not node:
+        return
+    inorder(node.left)
+    print(node.val)
+    inorder(node.right)
+    
+# 후위 순회 #LRN
+def postorder(node):
+    if not node:
+        return
+    postorder(node.left)
+    postorder(node.right)
+    print(node.val)
+```
